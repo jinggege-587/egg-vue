@@ -1,6 +1,6 @@
 <template>
   <div class="simplemde-container" :style="{height:height+'px',zIndex:zIndex}">
-    <textarea :id="id">
+    <textarea :id="id" placeholder="请填写要添加描述">
     </textarea>
   </div>
 </template>

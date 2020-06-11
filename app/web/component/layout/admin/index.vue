@@ -1,9 +1,15 @@
 <template>
    <div class='main admin'>
-     <LayoutHeader></LayoutHeader>
-     <LayoutContent>
-       <div slot='content'><slot name='main'></slot></div>
-     </LayoutContent>
+     <div v-if="$route.meta.noAll" class="jing-main">
+       <router-view></router-view>
+     </div>
+     <div v-else>
+      <LayoutHeader></LayoutHeader>
+      <LayoutContent>
+        <div slot='content'><slot name='main'></slot></div>
+      </LayoutContent>
+     </div>
+     
    </div>
 </template>
 <style>
@@ -20,3 +26,9 @@
     }
   };
 </script>
+
+<style lang="less" scoped>
+  .jing-main{
+    padding: 20px;
+  }
+</style>

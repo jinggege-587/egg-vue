@@ -17,11 +17,26 @@ export default function createRouter() {
       },
       {
         path: '/article/list',
-        component: ArticleList
+        component: ArticleList,
+        meta: {
+          noAll:true
+        }
       },
       {
         path: '/article/add',
-        component: () => import('../view/write/index.vue')
+        component: () => import('../view/write/index.vue'),
+        meta: {
+          noAll:true
+        }
+      },
+      {
+        path: '/article/jing',
+        component: () => import('../view/jing.vue'),
+        meta: {
+          noLeft: true,
+          noHead: true,
+          noAll:true
+        }
       },
       {
         path: '/article/detail/:id',

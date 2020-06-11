@@ -18,7 +18,7 @@
                 </el-option>
               </el-select>
               <el-button class="search-button" type="primary" @click="query()">查询</el-button>
-              <el-button class="add-button" type="success" @click="write()">写文章</el-button>
+              <el-button class="add-button" type="success" @click="write()">添加</el-button>
         </el-row>
       </div>
       <el-table
@@ -33,28 +33,38 @@
           width="55">
         </el-table-column>
         <el-table-column
-          prop="title"
-          label="标题">
+          prop="name"
+          label="名字">
           <template slot-scope="props">
-            <router-link :to="'/article/detail/'+ props.row.id">{{props.row.title}}</router-link>
+            <router-link :to="'/article/add?id='+ props.row.id+'&parent_name='+props.row.name">{{props.row.name}}</router-link>
           </template>
         </el-table-column>
         <el-table-column
-          prop="hits"
-          label="点赞"
-          width="100">
+          prop="parent_name"
+          label="父亲"
+          width="">
+        </el-table-column>
+        <el-table-column
+          prop="wife"
+          label="妻子"
+          width="">
+        </el-table-column>
+        <el-table-column
+          prop="des"
+          label="描述"
+          width="">
         </el-table-column>
         <el-table-column
           prop="status"
-          label="状态"
-          width="100">
+          label="图片"
+          width="">
           <template slot-scope="props">
-            <span v-text="props.row.status == 1 ? '已发布' : '草稿'"></span>
+            <img :src="props.row.images" alt="">
           </template>
         </el-table-column>
         <el-table-column
           label="操作"
-          width="180">
+          width="">
           <template slot-scope="props">
             <router-link :to="{params: {id: props.row.id}}" tag="span">
               <el-button type="info" size="small" icon="edit" @click="handleEdit(props.$index, props.row)">修改</el-button>
@@ -135,7 +145,11 @@ export default {
       this.fetchApi(this, this.q);
     },
     handleEdit(index, row) {
-      this.$message(`你点击了编辑操作 index:${index}, id:${row.id}`);
+      // this.$message(`你点击了编辑操作 index:${index}, id:${row.id}`);
+      console.log('row',row)
+      // this.$router.push("/article/add");
+      let query = row;
+      this.$router.push({path:'/article/add',query})
     },
     handleDelete(index, row) {
       this.$store.dispatch(DELETE_ARTICLE, { id: row.id });

@@ -7,7 +7,9 @@
     "start": "egg-scripts start",
     "debug": "egg-bin debug",
     "clean": "easy clean",
-    "build": "easy build",
+    "build": "easy build pro",
+    "build:prod": "cross-env easy clean && easy build prod",
+    "build:test": "cross-env easy clean && easy build test",
     "lint": "eslint .",
     "fix": "eslint --fix .",
     "ii": "npm install --registry https://registry.npm.taobao.org"
@@ -15,6 +17,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "cross-env": "^5.0.0",
+    "echarts": "^4.8.0",
     "egg": "^2.1.0",
     "egg-bin": "^4.3.7",
     "egg-cors": "^2.0.0",
