@@ -1,5 +1,6 @@
 <template>
   <div>
+    <el-page-header @back="goBack" content="详情页面"></el-page-header>
     <div class="search">
       <el-row class="clear">
             <el-input class="long-input" clearable v-model="article.name" placeholder="请填写要添加名字"></el-input>
@@ -16,7 +17,7 @@
         <el-input class="long-input" clearable v-model="article.images" placeholder="请填写要添加名字的图片"></el-input>
       </el-row>
       <el-row class="clear top16">
-        <el-input class="long-input" clearable v-model="article.parent_id" placeholder="请填写要添加父节点的ID"></el-input>
+        <el-input class="long-input" :disabled="article.parent_id?true:''" clearable v-model="article.parent_id" placeholder="请填写要添加父节点的ID"></el-input>
       </el-row>
     </div>
     <div class="editor-container" v-if="isShowEditor">
@@ -51,6 +52,9 @@ export default {
   },
   computed: {},
   methods: {
+    goBack() {
+        this.$router.push("/article/list");
+    },
      markdown2Html() {
       import('showdown').then(showdown => {
         const converter = new showdown.Converter()
@@ -66,13 +70,19 @@ export default {
   created () {
     console.log('this.$route.query.id;',this.$route.query.id)
     let query = this.$route.query;
-    this.article.id = query.id;
-    this.article.parent_id = query.id;
-    this.article.name = query.name;
-    this.article.wife = query.wife;
-    this.article.parent_name = query.parent_name;
-    this.article.images = query.images;
-    this.article.des = query.des;
+    if(query.id && query.parent_id){
+      this.article.id = query.id;
+      this.article.parent_id = query.parent_id;
+      this.article.name = query.name;
+      this.article.wife = query.wife;
+      this.article.parent_name = query.parent_name;
+      this.article.images = query.images;
+      this.article.des = query.des;
+    }else{
+      this.article.parent_id = query.id;
+      this.article.parent_name = query.parent_name;
+    }
+    
   },
   mounted() {
     this.isShowEditor = true;

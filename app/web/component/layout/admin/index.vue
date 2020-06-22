@@ -29,6 +29,7 @@
 
 <style lang="less" scoped>
   .jing-main{
+    width: 100%;
     padding: 20px;
   }
 </style>

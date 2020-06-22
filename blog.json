@@ -580,7 +580,7 @@
     },
     {
       "id": "2eOV4i5Ce",
-      "parent_id": 0,
+      "parent_id": "0",
       "name": "靖金建",
       "wife": "",
       "parent_name": "靖中原",
@@ -631,15 +631,6 @@
       "parent_name": "靖中原",
       "images": "",
       "des": "小姑娘"
-    },
-    {
-      "id": "AXdnfHtij",
-      "parent_id": "AXdnfHtij",
-      "name": "靖汉昌",
-      "wife": "",
-      "parent_name": "靖金建",
-      "images": "",
-      "des": ""
     },
     {
       "id": "rknRhzhZf",
@@ -764,6 +755,33 @@
       "name": "刘展彤",
       "wife": "",
       "parent_name": "靖小静",
+      "images": "",
+      "des": ""
+    },
+    {
+      "id": "TwcNMA-5a",
+      "parent_id": "2eOV4i5Ce",
+      "name": "靖汉昌",
+      "wife": "",
+      "parent_name": "靖金建",
+      "images": "",
+      "des": ""
+    },
+    {
+      "id": "oSnk_6EVX",
+      "parent_id": "TwcNMA-5a",
+      "name": "靖宏斌",
+      "wife": "",
+      "parent_name": "靖汉昌",
+      "images": "",
+      "des": ""
+    },
+    {
+      "id": "DQNnraEdS",
+      "parent_id": "TwcNMA-5a",
+      "name": "靖铭锦",
+      "wife": "",
+      "parent_name": "靖汉昌",
       "images": "",
       "des": ""
     }
