@@ -1,11 +1,19 @@
 <template>
   <div class="list">
+    <div class="search">
+        <el-row class="clear">
+              <label> 姓名:</label><el-input class="search-input" clearable v-model="q.name" placeholder="关键字"></el-input>
+              <el-button class="search-button" type="primary" @click="query()">查询</el-button>
+              <!-- <el-button class="add-button" type="success" @click="write()">添加</el-button> -->
+        </el-row>
+    </div>
+
     <el-table
       :data="articleList"
       v-loading="loading"
       element-loading-text="拼命加载中"
       border
-      style="width: 100%;">
+      style="width: 100%;" >
       <el-table-column prop="name" label="名字">
         <template slot-scope="props">
           <router-link
@@ -65,8 +73,7 @@ export default {
   data() {
     return {
       q: {
-        title: undefined,
-        categoryId: undefined,
+        name: undefined,
         pageIndex: 1,
         pageSize: 10
       },
@@ -81,6 +88,7 @@ export default {
       return $store.dispatch(SET_ARTICLE_LIST, json);
     },
     query() {
+        console.log('this.q',this.q)
       this.fetchApi(this, this.q);
     },
     write() {

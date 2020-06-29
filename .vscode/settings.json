@@ -1,3 +1,4 @@
 {
-    "vue-i18n.i18nPaths": "app/web/framework/i18n"
+    "vue-i18n.i18nPaths": "app/web/framework/i18n",
+    "i18n-ally.localesPaths": "app/web/framework/i18n"
 }

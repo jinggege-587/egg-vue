@@ -16,6 +16,7 @@
     "ii": "npm install --registry https://registry.npm.taobao.org"
   },
   "dependencies": {
+    "@antv/g6": "^3.5.7",
     "axios": "^0.17.1",
     "cross-env": "^5.0.0",
     "echarts": "^4.8.0",
