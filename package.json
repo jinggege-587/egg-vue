@@ -18,7 +18,7 @@
   "dependencies": {
     "@antv/g6": "^3.5.7",
     "@vue/cli-plugin-typescript": "^4.4.6",
-    "axios": "^0.17.1",
+    "axios": "^0.18.1",
     "cross-env": "^5.0.0",
     "echarts": "^4.8.0",
     "egg": "^2.1.0",
