@@ -30,8 +30,33 @@ export default function createRouter() {
         }
       },
       {
+        path: '/article/rayTree',
+        component: () => import('../view/rayTree.vue'),
+        meta: {
+          noAll:true
+        }
+      },
+      {
         path: '/article/jing',
         component: () => import('../view/jing.vue'),
+        meta: {
+          noLeft: true,
+          noHead: true,
+          noAll:true
+        }
+      },
+      {
+        path: '/article/decisionTree',
+        component: () => import('../view/decisionTree.vue'),
+        meta: {
+          noLeft: true,
+          noHead: true,
+          noAll:true
+        }
+      },
+      {
+        path: '/article/decisionRayTree',
+        component: () => import('../view/decisionRayTree.vue'),
         meta: {
           noLeft: true,
           noHead: true,

@@ -7,7 +7,7 @@
               <!-- <el-button class="add-button" type="success" @click="write()">添加</el-button> -->
         </el-row>
     </div>
-
+  <!-- <img width="20" src="./../../../asset/images/img01.png" alt=""> -->
     <el-table
       :data="articleList"
       v-loading="loading"
@@ -26,7 +26,7 @@
       <el-table-column prop="des" label="描述" width></el-table-column>
       <el-table-column label="图片" width>
         <template slot-scope="props">
-          <img :src="props.row.images" alt />
+          <img width="20" :src="props.row.images" alt />
         </template>
       </el-table-column>
       <el-table-column label="操作" width>

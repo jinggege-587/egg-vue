@@ -6,17 +6,7 @@ module.exports = class ArticeService extends egg.Service {
   constructor(ctx) {
     super(ctx);
     this.ctx = ctx;
-    this.colllection = new Collection(ctx.db, 'jing');
-  }
-  async getArtilceList(json = {}) {
-    const { name, categoryId, status, pageIndex, pageSize } = json;
-    const query = new Query();
-    query.where.categoryId = categoryId;
-    query.where.status = status;
-    query.like.name = name;
-    query.pageIndex = pageIndex;
-    query.pageSize = pageSize;
-    return this.colllection.getPager(query);
+    this.colllection = new Collection(ctx.db, 'rayList');
   }
   async getArtilceRayList(json = {}) {
     const { name, categoryId, status, pageIndex, pageSize } = json;

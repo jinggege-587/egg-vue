@@ -8,6 +8,9 @@ module.exports = class AdminController extends egg.Controller {
   async list(ctx) {
     this.ctx.body = await ctx.service.article.getArtilceList(ctx.request.body);
   }
+  async rayList(ctx) {
+    this.ctx.body = await ctx.service.ray.getArtilceRayList(ctx.request.body);
+  }
   async add(ctx) {
     ctx.body = await this.service.article.saveArticle(ctx.request.body);
   }
